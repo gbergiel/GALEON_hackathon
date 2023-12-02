@@ -1,0 +1,7 @@
+
+filename='WBA7F21070B235942_20230406_110938_1413_27451.png';
+[status,cmdout]=system(append('base64 ', filename, ' | curl -d @- https://detect.roboflow.com/hackathon-r20aq/1?api_key=Ypm944XyRsYlNKBKmcoU'));
+predictions=regexp(cmdout, 'predictions":(.*?)}','match');
+x=regexp(predictions{1}, 'x":(.*?),','match');
+x=x{1};
+x=str2num(x(4:end-1))

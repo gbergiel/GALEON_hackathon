@@ -46,7 +46,7 @@ annotatedImage = imresize(annotatedImage,2);
 % figure
 % imshow(annotatedImage)
 
-inputSize = size(annotatedImage);
+inputSize = [160,256,3];
 className = "BoundingBox";
 rng("default")
 trainingDataForEstimation = transform(trainingData,@(data)preprocessData(data,inputSize));
